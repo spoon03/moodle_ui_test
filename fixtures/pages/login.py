@@ -16,6 +16,9 @@ class LoginPage:
         return self.webdriver.find_element(By.ID, "loginbtn")
 
     def auth(self, login: str, password: str):
+        """
+        Auth func
+        """
         self._login_input().send_keys(login)
         self._password_input().send_keys(password)
         self._submit_button().click()

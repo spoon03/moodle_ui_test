@@ -1,5 +1,8 @@
+from fixtures.models.login import LoginData
+
+
 class TestLogin:
-    def test_login_with_valid_data(self, app):
+    def test_login_with_valid_data(self, app, user_data):
         """
         Steps:
         1. Open login page
@@ -7,5 +10,17 @@ class TestLogin:
         3. Check result
         """
         app.open_login_page()
-        app.login.auth("name", "Password")
+        app.login.auth(data=user_data, is_submit=True)
+        assert 1 == 1  # TODO add assert
+
+    def test_login_with_invalid_data(self, app):
+        """
+        Steps:
+        1. Open login page
+        2. Auth with invalid data
+        3. Check result
+        """
+        app.open_login_page()
+        data = LoginData.random()
+        app.login.auth(data)
         assert 1 == 1  # TODO add assert

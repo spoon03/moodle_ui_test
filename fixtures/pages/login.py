@@ -26,7 +26,9 @@ class LoginPage(BasePage):
         Если мы login → logout → login
         """
         logger.info(f"Login with user {data.login} and password {data.password}")
-        self._login_input().send_keys(data.login)
-        self._password_input().send_keys(data.password)
+        if data.login is not None:
+            self._login_input().send_keys(data.login)
+        if data.password is not None:
+            self._password_input().send_keys(data.password)
         if is_submit:
             self._submit_button().click()

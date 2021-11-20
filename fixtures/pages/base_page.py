@@ -29,7 +29,7 @@ class BasePage:
         if data:
             element.send_keys(data)
 
-    def get_text(self, locator, wait_time=60):
+    def get_text(self, locator, wait_time=60) -> str:
         """
         Get element text
         """

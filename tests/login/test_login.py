@@ -28,16 +28,16 @@ class TestLogin:
         assert 1 == 1  # TODO add assert
 
     @pytest.mark.parametrize("field", ["login", "password"])
-    def test_login_with_password(self, app, user_data, field):
+    def test_login_with_password(self, app, field):
         """
         Steps:
         1. Open login page
         2. Auth with invalid data
         3. Check result
         """
-        # app.open_login_page()
-        # setattr(user_data, field, None)
-        # getattr(user_data, field)
-        # data = LoginData(login=user_data.login, password=None)
-        # app.login.auth(data)
+        app.open_login_page()
+        data = LoginData.random()
+        setattr(data, field, None)
+        data = LoginData(login=data.login, password=None)
+        app.login.auth(data)
         assert 1 == 1  # TODO add assert

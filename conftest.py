@@ -52,7 +52,6 @@ def app(request):
         chrome_options.headless = False
     else:
         chrome_options.headless = True
-
     driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
     logger.info(f"Start app on {url}")
     app = Application(driver, url)

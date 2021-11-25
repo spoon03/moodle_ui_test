@@ -26,3 +26,6 @@ Test app
 ```
 https://qacoursemoodle.innopolis.university
 ```
+
+
+pytest --alluredir=allure-results/ 

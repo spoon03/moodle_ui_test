@@ -13,7 +13,7 @@ class TestLogin:
         """
         app.open_login_page()
         app.login.auth(data=user_data, is_submit=True)
-        assert 1 == 1  # TODO add assert
+        assert 1 == 2  # TODO add assert
 
     def test_login_with_invalid_data(self, app):
         """

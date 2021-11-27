@@ -4,6 +4,8 @@ fake = Faker("Ru-ru")
 
 
 class RegisterData:
+    """Методы для страницы регистрации."""
+
     def __init__(
         self,
         login=None,
@@ -24,6 +26,10 @@ class RegisterData:
 
     @staticmethod
     def random():
+        """
+        Рандомизатор данных для регистрации
+        :return:
+        """
         login = fake.email()
         password = fake.password()
 

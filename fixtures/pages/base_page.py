@@ -4,6 +4,8 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 class BasePage:
+    """Класс с описанием базовых методов."""
+
     def __init__(self, app):
         self.app = app
 
@@ -20,14 +22,14 @@ class BasePage:
         )
         return element
 
-    def click_element(self, locator, wait_time=60):
+    def click_element(self, locator, wait_time=60) -> None:
         """
         click_element = click
         """
         element = self.custom_find_element(locator, wait_time)
         element.click()
 
-    def fill_element(self, data, locator, wait_time=60):
+    def fill_element(self, data, locator, wait_time=60) -> None:
         """
         Fill element (fill_element == send_keys)
         :param data: string to fill
@@ -42,5 +44,3 @@ class BasePage:
         """
         element = self.custom_find_element(locator, wait_time)
         return element.text
-
-

@@ -9,6 +9,8 @@ logger = logging.getLogger("moodle")
 
 
 class RegisterPage(BasePage):
+    """Класс с описанием методов страницы регистрации."""
+
     def add_new_user(self, data: RegisterData, is_submit: bool = True):
         """
         Register new user
@@ -27,5 +29,16 @@ class RegisterPage(BasePage):
         if is_submit:
             self.click_element(locator=RegisterLocators.SUBMIT_BTN)
 
-    def get_error_name(self) -> str:
-        return self.get_text(locator=RegisterLocators.ERROR_FIRST_NAME)
+    def get_pass_text(self) -> str:
+        """
+        Получение текста при удачной регистрации.
+        :return:
+        """
+        return self.get_text(locator=RegisterLocators.PASS_REGISTER_TEXT)
+
+    def get_fail_text(self) -> str:
+        """
+        Получение текста при неудачной регистрации.
+        :return:
+        """
+        return self.get_text(locator=RegisterLocators.FAIL_REGISTER_TEXT)

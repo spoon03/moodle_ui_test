@@ -9,6 +9,8 @@ logger = logging.getLogger("moodle")
 
 
 class LoginPage(BasePage):
+    """Класс с описанием методов страницы логина."""
+
     def auth(self, data: LoginData, is_submit: bool = True):
         """
         Auth func

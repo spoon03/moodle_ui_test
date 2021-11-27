@@ -21,8 +21,8 @@ class LoginPage(BasePage):
         if is_submit:
             self.click_element(locator=LoginLocators.LOGIN_BTN)
 
-    def _get_error_text(self) -> str:
+    def get_alert_text(self) -> str:
         """
-        Пример получения текста элемента!!!!
+        Получение текста предупреждения при неудачном логине.
         """
-        return self.get_text(locator=LoginLocators.LOGIN_BTN)
+        return self.get_text(locator=LoginLocators.LOGIN_ERROR)

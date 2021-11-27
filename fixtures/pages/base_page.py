@@ -1,3 +1,4 @@
+from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -6,7 +7,13 @@ class BasePage:
     def __init__(self, app):
         self.app = app
 
-    def custom_find_element(self, locator, wait_time=60):
+    def custom_find_element(self, locator, wait_time=60) -> WebElement:
+        """
+        Поиск элемента по локатору
+        :param locator:
+        :param wait_time:
+        :return:
+        """
         element = WebDriverWait(self.app.driver, wait_time).until(
             EC.presence_of_element_located(locator),
             message=f"Can't find element by locator {locator}",
@@ -35,3 +42,5 @@ class BasePage:
         """
         element = self.custom_find_element(locator, wait_time)
         return element.text
+
+

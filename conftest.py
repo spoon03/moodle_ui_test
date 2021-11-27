@@ -20,10 +20,16 @@ def pytest_addoption(parser):
         help="Moodle url",
     ),
     parser.addoption(
-        "--username", action="store", default="super_qa_2021", help="username",
+        "--username",
+        action="store",
+        default="super_qa_2021",
+        help="username",
     ),
     parser.addoption(
-        "--password", action="store", default="Password11!", help="Password",
+        "--password",
+        action="store",
+        default="Password11!",
+        help="Password",
     ),
     parser.addoption(
         "--headless",

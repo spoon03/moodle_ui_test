@@ -15,7 +15,14 @@ class TestLogin:
         """
         app.open_login_page()
         app.login.auth(data=user_data, is_submit=True)
-        assert type(app.login.custom_find_element(locator=LoginLocators.LOGIN_MENU, wait_time=10)) == WebElement
+        assert (
+            type(
+                app.login.custom_find_element(
+                    locator=LoginLocators.LOGIN_MENU, wait_time=10
+                )
+            )
+            == WebElement
+        )
 
     def test_login_with_invalid_data(self, app):
         """

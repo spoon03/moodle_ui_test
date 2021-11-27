@@ -28,4 +28,4 @@ https://qacoursemoodle.innopolis.university
 ```
 
 
-pytest --alluredir=allure-results/ 
+pytest --alluredir=allure-results/

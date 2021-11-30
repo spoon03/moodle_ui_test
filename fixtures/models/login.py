@@ -1,5 +1,5 @@
+from __future__ import annotations
 from faker import Faker
-
 fake = Faker("Ru-ru")
 
 
@@ -11,7 +11,7 @@ class LoginData:
         self.password = password
 
     @staticmethod
-    def random():
+    def random() -> LoginData:
         """
         Рандомизатор данных для логина.
         :return:
